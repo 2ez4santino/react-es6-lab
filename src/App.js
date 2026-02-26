@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import UserList from './UserList'; // Correctly imported [cite: 173]
 
 function App() {
   const names = ['Alice','Bob','Charlie'];
@@ -10,10 +11,17 @@ function App() {
   const { name, age } = person;
   console.log('Destructured:', name, age);
 
+  const users = ['Alice','Bob','Charlie']; // Data for the component 
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        
+        {/* Render the UserList component here  */}
+        <h1>User List:</h1>
+        <UserList users={users} /> 
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
