@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import UserList from './UserList';
 import Counter from './Counter';
+import UserAPI from './UserAPI'; // Import the new API component
 
 function App() {
   // --- Step 3: ES6+ Logic ---
@@ -13,9 +14,9 @@ function App() {
   const { name, age } = person;
   console.log('Destructured:', name, age);
 
-  // --- Step 4 & 6: Data and Conditional State ---
+  // --- Step 4 & 6: Data and Logic ---
   const users = ['Alice', 'Bob', 'Charlie'];
-  const isLoggedIn = true; // Change this to 'false' to see the other message!
+  const isLoggedIn = true;
 
   return (
     <div className="App">
@@ -25,10 +26,13 @@ function App() {
         {/* Step 6: Conditional Rendering */}
         {isLoggedIn ? <h1>Welcome back, {name}!</h1> : <h1>Please log in.</h1>}
         
-        {/* Step 5: Counter Component */}
+        {/* Step 5: State & Events */}
         <Counter />
         
-        {/* Step 4: User List Component */}
+        {/* Step 7: API Data Fetching */}
+        <UserAPI />
+
+        {/* Step 4: Props & Lists */}
         <UserList users={users} />
 
         <p>
