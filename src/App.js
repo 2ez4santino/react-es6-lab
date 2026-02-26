@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import UserList from './UserList'; // Correctly imported [cite: 173]
+import UserList from './UserList';
+import Counter from './Counter';
 
 function App() {
-  const names = ['Alice','Bob','Charlie'];
+  // --- Step 3: ES6+ Logic ---
+  const names = ['Alice', 'Bob', 'Charlie'];
   const doubled = names.map(name => name.length * 2);
   console.log('Doubled lengths:', doubled);
 
@@ -11,16 +13,23 @@ function App() {
   const { name, age } = person;
   console.log('Destructured:', name, age);
 
-  const users = ['Alice','Bob','Charlie']; // Data for the component 
+  // --- Step 4 & 6: Data and Conditional State ---
+  const users = ['Alice', 'Bob', 'Charlie'];
+  const isLoggedIn = true; // Change this to 'false' to see the other message!
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        {/* Step 6: Conditional Rendering */}
+        {isLoggedIn ? <h1>Welcome back, {name}!</h1> : <h1>Please log in.</h1>}
         
-        {/* Render the UserList component here  */}
-        <h1>User List:</h1>
-        <UserList users={users} /> 
+        {/* Step 5: Counter Component */}
+        <Counter />
+        
+        {/* Step 4: User List Component */}
+        <UserList users={users} />
 
         <p>
           Edit <code>src/App.js</code> and save to reload.
